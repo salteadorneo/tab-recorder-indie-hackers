@@ -1,24 +1,26 @@
 ---
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta
-			name="description"
-			content="Record websites generating impressive videos for indie hackers."
-		/>
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/tab-recorder-indie-hackers/favicon.svg"
+		/>
 		<title>{title}</title>
 	</head>
-	<body class="antialiased bg-white text-gray-900 tracking-tight">
+	<body class="antialiased bg-white text-gray-900">
 		<slot />
 	</body>
 </html>
